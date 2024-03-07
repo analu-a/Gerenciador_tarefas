@@ -30,22 +30,22 @@ async function criarContainerTarefa(tarefa) {
     iconeDeletarTarefa.src = 'https://img.icons8.com/?size=30&id=ypOzn2c4IIbr&format=png'
     // iconeDeletarTarefa.addEventListener('click', deletarTarefa(tarefa.id))
 
-    var btn = document.getElementById("btn");
-    var div = document.getElementById("container");
-    btn.addEventListener("click", function () {
-        if (div.style.display === "none") {
-            div.style.display = "block";
-        } else {
-            div.style.display = "none";
-        }
+    const divBotao = document.createElement('div')
+    divBotao.setAttribute('class', 'button-container')
 
-    })
+    const comentario = document.createElement('button')
+    comentario.id = 'btn'
+    const imgComent = document.createElement('img')
+    imgComent.src = '../img/comentarios.png'
+    comentario.appendChild(imgComent)
+    divBotao.appendChild(comentario)
 
-    taskContainer.append(imgTarefa, tituloTarefa, descricaoTarefa, iconeDeletarTarefa, btn)
+
+    taskContainer.append(imgTarefa, tituloTarefa, descricaoTarefa, iconeDeletarTarefa,divBotao,comentario,imgComent)
     return taskContainer
 }
 
-// ********* comentarios ***********
+
 
 async function validarTarefa() {
     const url = 'http://localhost:5080/tarefas'
@@ -87,3 +87,16 @@ async function deletarTarefa(tarefa) {
 }
 // iconeDeletarTarefa.addEventListener('click', deletarTarefa(tarefa))
 mostrarContainerTarefa()
+
+const btn = document.getElementById('btn')
+
+btn.addEventListener("click", function () {
+    const div = document.getElementById("container");
+    alert(div.style.visibility )
+    if (div.style.visibility === "hidden") {
+        div.style.visibility = "visible";
+    } else {
+        div.style.visibility = "hidden";
+    }
+
+})

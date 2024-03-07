@@ -154,24 +154,24 @@ h2{
 /* ******** comentarios ******** */
 
 .comentarios{
-    display: flex;
+visibility: hidden;
     align-items: center;
     justify-content: center;
 
 }
 
 .button-container{
-    position: absolute;
-    left: 50px;
-    bottom: 655px;
-    height: 10vh;
-    width: 20vw;
-   
+    width: 8vw;   
 }
 
  .button-container button{
     background-color:transparent;
     border: none;
+    height: fit-content;
+    width: fit-content;
+}
+.button-container img{
+    height: 3vh;
 }
 
 .coment{
